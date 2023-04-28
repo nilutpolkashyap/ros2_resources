@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'publisher = ros2_python_pkg.publisher:main'
+            'publisher = ros2_python_pkg.publisher:main',
+            'subscriber = ros2_python_pkg.subscriber:main'
         ],
     },
 )
