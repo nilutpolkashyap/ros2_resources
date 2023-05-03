@@ -1,0 +1,3 @@
+int32 temperature
+string debug_message
+float64 cpu_percentage
