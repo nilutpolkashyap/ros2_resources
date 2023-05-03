@@ -22,7 +22,8 @@ setup(
         'console_scripts': [
             'publisher = ros2_python_pkg.publisher:main',
             'subscriber = ros2_python_pkg.subscriber:main',
-            'random_num = my_ros2_python_pkg.random_num:main',
+            'random_num = ros2_python_pkg.random_num:main',
+            'odd_even = ros2_python_pkg.odd_even:main',
         ],
     },
 )
