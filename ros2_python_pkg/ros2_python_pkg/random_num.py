@@ -31,6 +31,5 @@ def main(args=None):
 		my_pub.destroy_node()              
 		rclpy.shutdown()  
 
-
 if __name__ == '__main__':
 	main()
