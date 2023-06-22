@@ -12,12 +12,15 @@ find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(my_custom_interfaces REQUIRED)
 
+# create executables 
 add_executable(publisher src/publisher.cpp)
 ament_target_dependencies(publisher rclcpp std_msgs)
 
 add_executable(subscriber src/subscriber.cpp)
 ament_target_dependencies(subscriber rclcpp std_msgs)
 
+
+# config for ROS2 cli tools  
 install(TARGETS
   publisher
   subscriber
