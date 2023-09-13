@@ -13,9 +13,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='nilutpolk',
-    maintainer_email='nkelectronicshlnp@gmail.com',
-    description='TODO: Package description',
+    maintainer='nilutpolkashyap',
+    maintainer_email='nilutpolkashyap@gmail.com',
+    description='ROS 2 Python code examples package',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
