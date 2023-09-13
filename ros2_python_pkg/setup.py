@@ -24,6 +24,10 @@ setup(
             'subscriber = ros2_python_pkg.subscriber:main',
             'random_num = ros2_python_pkg.random_num:main',
             'odd_even = ros2_python_pkg.odd_even:main',
+            'hardware_status = ros2_python_pkg.hardware_status:main',
+            'params_use = ros2_python_pkg.params_use:main',
+            "add_two_ints_server = ros2_python_pkg.add_two_ints_server:main",
+            "add_two_ints_client = ros2_python_pkg.add_two_ints_client:main",
         ],
     },
 )
