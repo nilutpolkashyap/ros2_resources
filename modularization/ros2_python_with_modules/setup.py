@@ -21,7 +21,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'main = ros2_python_with_modules.main:main',
+            'my_publisher = ros2_python_with_modules.main:main',
         ],
     },
 )
