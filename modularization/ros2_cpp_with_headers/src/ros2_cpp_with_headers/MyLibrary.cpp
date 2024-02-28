@@ -5,6 +5,7 @@
 
 namespace ros2_cpp_with_headers {
 
+using namespace std::chrono_literals;
 using std::placeholders::_1;
 
 MyLibrary::MyLibrary() : Node("my_publisher") {
