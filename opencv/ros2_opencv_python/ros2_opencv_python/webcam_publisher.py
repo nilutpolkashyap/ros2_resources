@@ -11,7 +11,7 @@ class WebcamPublisher(Node):
             self.publisher_ = self.create_publisher(Image, 'webcam/image', 10)  # Create a publisher for the 'sensor_msgs/Image' messages on the topic '/webcam/image'
             self.camera_info_publisher = self.create_publisher(CameraInfo, 'webcam/camera_info', 10)  # Create a publisher for camera info messages on the topic '/webcam/camera_info'
             self.bridge = CvBridge()  # Initialize the OpenCV to ROS bridge
-            self.capture = cv2.VideoCapture("/home/user/colcon_ws/src/GICWmACN6Hhns8QCAGcvFBwce5kYbpR1A.mp4")  # Open the default webcam (index 0)
+            self.capture = cv2.VideoCapture(0)  # Open the default webcam (index 0)
 
             # Check if the webcam is opened successfully
             if not self.capture.isOpened():
