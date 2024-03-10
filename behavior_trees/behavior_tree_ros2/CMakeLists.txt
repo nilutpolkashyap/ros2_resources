@@ -24,10 +24,6 @@ install(TARGETS
   grasp_place
   DESTINATION lib/${PROJECT_NAME})
 
-# install(DIRECTORY include/
-#   DESTINATION include/
-# )
-
 install(DIRECTORY behavior_tree_xml
   DESTINATION share/${PROJECT_NAME}
 )
