@@ -6,7 +6,7 @@
 class HelloWorldSubNode : public rclcpp::Node   //creating a new class  inheriting from rclcpp Node class
 { 
   public: 
-    HelloWorldSubNode() : Node("hello_world_sub_node")   ## ==> node name
+    HelloWorldSubNode() : Node("hello_world_sub_node")   // node name
 		{
 			subscription_ = this->create_subscription<std_msgs::msg::String>(
 				"hello_world", 10, std::bind(&HelloWorldSubNode::sub_callback, this, std::placeholders::_1)
