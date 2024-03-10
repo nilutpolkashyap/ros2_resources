@@ -11,13 +11,15 @@ class MyLifecycleNode(Node):
         # Initialize the lifecycle node
         super().__init__(node_name, **kwargs)
 
+    # Callback function for walltimer
+	# This function gets invoked by the timer and executes the publishing
     def callback(self):
         """Publish a new message when enabled."""
         msg = String()
         msg.data = 'Hello World -> ' + str(self._count)
         self._count += 1
 
-        # Print the current state for demo purposes
+        ## Print the current state of lifecycle publisher
         if self._lifecycle_pub.is_activated:
             self.get_logger().info(f'Lifecycle publisher is active. Publishing: [{msg.data}]')
         else:
@@ -29,6 +31,7 @@ class MyLifecycleNode(Node):
         # enabled and the message actually published.
         self._lifecycle_pub.publish(msg)
 
+    ## Lifecycle callback for the configure state
     def on_configure(self, state: State) -> TransitionCallbackReturn:
         self.get_logger().info("Configuring...")
 
@@ -40,28 +43,32 @@ class MyLifecycleNode(Node):
 
         return TransitionCallbackReturn.SUCCESS
 
+    ##  Lifecycle callback for the activate state
     def on_activate(self, state: State) -> TransitionCallbackReturn:
         self.get_logger().info("Activating...")
 
         # Your activation code here
 
-
         self.get_logger().info("Node is activated!")
 
         return super().on_activate(state)
 
+    ##  Lifecycle callback for the deactivate state
     def on_deactivate(self, state: State) -> TransitionCallbackReturn:
         self.get_logger().info("Deactivating...")
 
         # Your deactivation code here
+
         self.get_logger().info("Node is deactivated!")
 
         return super().on_deactivate(state)
 
+    ##  Lifecycle callback for the cleanup state
     def on_cleanup(self, state: State) -> TransitionCallbackReturn:
         self.get_logger().info("Cleaning up...")
 
         # Your cleanup code here
+        ## release resources
         self.destroy_timer(self._timer)
         self.destroy_publisher(self._lifecycle_pub)
 
@@ -69,10 +76,12 @@ class MyLifecycleNode(Node):
 
         return TransitionCallbackReturn.SUCCESS
 
+    ##  Lifecycle callback for the shutdown state
     def on_shutdown(self, state: State) -> TransitionCallbackReturn:
         self.get_logger().info("Shutting down...")
 
         # Your shutdown code here
+        ## release resources
         self.destroy_timer(self._timer)
         self.destroy_publisher(self._lifecycle_pub)
 
