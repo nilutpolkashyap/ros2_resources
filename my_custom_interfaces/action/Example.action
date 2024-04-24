@@ -1,0 +1,5 @@
+int32 number    # Request
+---
+bool finalresult    # Result
+---
+int32 status    # Feedback
